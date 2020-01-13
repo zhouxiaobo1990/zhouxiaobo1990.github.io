@@ -1,0 +1,16 @@
+<style>
+img {
+  width: 100%;
+  height: auto;
+}
+</style>
+<script src="script.js"></script>
+<script>
+function loadSpecifiedImage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  var parent = document.body;
+  loadImage(urlParams.get('EncryptedImagePath'), null, parent);
+}
+</script>
+<body onload="loadSpecifiedImage();">
+</body>
