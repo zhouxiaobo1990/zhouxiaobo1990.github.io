@@ -1,16 +1,22 @@
-<style>
-img {
-  width: 100%;
-  height: auto;
-}
-</style>
-<script src="script.js"></script>
-<script>
-function loadSpecifiedImage() {
-  const urlParams = new URLSearchParams(window.location.search);
-  var parent = document.body;
-  loadImage(urlParams.get('EncryptedImagePath'), null, parent);
-}
-</script>
+<!doctype html>
+<head>
+  <style>
+  img {
+    width: 100%;
+    height: auto;
+  }
+  </style>
+  <script src="script.js"></script>
+  <script>
+    function loadSpecifiedImage() {
+      const urlParams = new URLSearchParams(window.location.search);
+      var div = document.getElementById("img-container");
+      div.dataset.innerImgPath = urlParams.get('EncryptedImagePath');
+      loadImage(div);
+    }
+  </script>
+</head>
 <body onload="loadSpecifiedImage();">
+  <div id="img-container">
+  </div>
 </body>
